@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 function Todolist() {
-    const [tasks, setTasks] = useState([]);
+    const [tasks, setTasks] = useState(["eat breakfast", "drink water", "exercise", "sleep", "study", "code"]);
     const [newTask, setNewTask] = useState("");
     function handleInputChange(event) {
-
+        setNewTask(event.target.value);
     }
     function addTask() {
 
@@ -20,6 +20,27 @@ function Todolist() {
     return (
         <div className="to-do-list">
             <h1>Todo-List</h1>
+            <div>
+                <input
+                    type="text"
+                    placeholder="enter the task"
+                    value={newTask}
+                    onChange={handleInputChange} />
+                <button
+                    className="add-button"
+                    onClick={addTask}
+                >Add</button>
+            </div>
+            <ol>
+                {tasks.map((task, index) => (
+                    <li key={index}>
+                        <span className="text">{task}</span>
+                        <button className="delete-button" onClick={() => deleteTask(index)}>Delete</button>
+                        <button className="move-up-button" onClick={() => moveTaskUp(index)}>Move Up</button>
+                        <button className="move-down-button" onClick={() => moveTaskDown(index)}>Move Down</button>
+                    </li>
+                ))}
+            </ol>
         </div>
     );
 }

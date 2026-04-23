@@ -33,3 +33,11 @@ button {
 .delete-button:hover {
     background-color: #ce2323;
 }
+
+.move-up-button {
+    background-color: #ff9800;
+}
+
+.move-up-button:hover {
+    background-color: #e68a00;
+}

@@ -41,3 +41,11 @@ button {
 .move-up-button:hover {
     background-color: #e68a00;
 }
+
+.move-down-button {
+    background-color: #ff9800;
+}
+
+.move-down-button:hover {
+    background-color: #e68a00;
+}

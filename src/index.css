@@ -60,3 +60,6 @@ li{
     display: flex;
     align-items: center;
 }
+.text{
+    flex: 1;
+}

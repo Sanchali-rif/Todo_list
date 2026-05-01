@@ -6,10 +6,14 @@ function Todolist() {
         setNewTask(event.target.value);
     }
     function addTask() {
-
+        if (newTask.trim() !== "") {
+            setTasks(t => ([...t, newTask]));
+            setNewTask("");
+        }
     }
     function deleteTask(index) {
-
+        const updatedTask = tasks.filter((_, index) => index !== index);
+        setTasks(updatedTask);
     }
     function moveTaskUp(index) {
 

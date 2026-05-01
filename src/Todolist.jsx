@@ -16,7 +16,10 @@ function Todolist() {
         setTasks(updatedTask);
     }
     function moveTaskUp(index) {
+        if (index > 0) {
+            const updatedTask = [...tasks];
 
+        }
     }
     function moveTaskDown(index) {
 

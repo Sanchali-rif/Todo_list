@@ -18,11 +18,16 @@ function Todolist() {
     function moveTaskUp(index) {
         if (index > 0) {
             const updatedTask = [...tasks];
-
+            [updatedTask[index - 1], updatedTask[index]] = [updatedTask[index], updatedTask[index - 1]];
+            setTasks(updatedTask);
         }
     }
     function moveTaskDown(index) {
-
+        if (index < tasks.length - 1) {
+            const updatedTask = [...tasks];
+            [updatedTask[index + 1], updatedTask[index]] = [updatedTask[index], updatedTask[index + 1]];
+            setTasks(updatedTask);
+        }
     }
     return (
         <div className="to-do-list">
